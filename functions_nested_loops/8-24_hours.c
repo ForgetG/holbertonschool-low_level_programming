@@ -18,7 +18,7 @@ void	jack_bauer(void)
 		hour_unit = '0';
 		minute_ten = '0';
 		minute_unit = '0';
-		while (hour_unit < '4')
+		while (hour_unit <= '9')
 		{
 			minute_ten = '0';
 			minute_unit = '0';
