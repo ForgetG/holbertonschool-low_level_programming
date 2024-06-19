@@ -11,16 +11,15 @@ void	jack_bauer(void)
 	int	minute_ten = '0';
 	int	minute_unit = '0';
 
-	while (hour_ten < '3')
+	while (hour_ten <= '2')
 	{
 		hour_unit = '0';
-		minute_ten = '0';
-		minute_unit = '0';
 		while (hour_unit <= '9')
 		{
+			if (hour_ten == '2' && hour_unit > '3')
+				break;
 			minute_ten = '0';
-			minute_unit = '0';
-			while (minute_ten < '6')
+			while (minute_ten <= '5')
 			{
 				minute_unit = '0';
 				while (minute_unit <= '9')
