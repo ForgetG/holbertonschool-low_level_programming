@@ -11,7 +11,7 @@ int	main(void)
 	int	index = 3;
 
 	printf("%.0f, %.0f", number1, number2);
-	for (; index < 99; index++)
+	for (; index <= 98; index++)
 	{
 		number3 = number1 + number2;
 		printf(", %.0f", number3);
