@@ -1,5 +1,2 @@
 #!/bin/bash
-
-filename=$(basename -- "$CFILE")
-filename="${filename%.*}"
-gcc -S -masm=intel "$CFILE" -o "${filename}.s"
+filename=$(basename -- "$CFILE") |filename="${filename%.*}" |gcc -S -masm=intel "$CFILE" -o "${filename}.s"
