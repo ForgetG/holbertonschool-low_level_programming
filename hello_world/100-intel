@@ -1,2 +1,2 @@
 #!/bin/bash
-filename=$(basename -- "$CFILE") |filename="${filename%.*}" |gcc -S -masm=intel "$CFILE" -o "${filename}.s"
+export CFILE=100-main.c |filename=$(basename -- "$CFILE") |filename="${filename%.*}" |gcc -S -masm=intel "$CFILE" -o "${filename}.s"
