@@ -14,9 +14,9 @@ int	main(void)
 	for (; index < 99; index++)
 	{
 		number3 = number1 + number2;
+		printf(", %.0f", number3);
 		number1 = number2;
 		number2 = number3;
-		printf(", %.0f", number3);
 	}
 	printf("\n");
 	return (0);
