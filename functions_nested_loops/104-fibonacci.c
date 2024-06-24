@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * main - print the first 98 Fibonacci numbers
@@ -7,7 +8,7 @@
 
 int	main(void)
 {
-	unsigned int	number1 = 1, number2 = 2, number3;
+	size_t	number1 = 1, number2 = 2, number3;
 	int	index = 3;
 
 	printf("%u, %u", number1, number2);
