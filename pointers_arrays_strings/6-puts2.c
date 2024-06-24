@@ -7,9 +7,26 @@
 
 void	puts2(char *str)
 {
-	int	i;
+	int	i, length;
 
-	for (i = 0; str[i] != '\0'; i += 2)
+	length = _strlen(str);
+
+	for (i = 0; i <= length; i += 2)
 		_putchar(str[i]);
 	_putchar('\n');
+}
+
+/**
+ * _strlen - return length of a string
+ * @s: string
+ * Return: length
+ */
+
+int	_strlen(char *s)
+{
+	int	length = 0;
+
+	while (s[length] != '\0')
+		length++;
+	return (length);
 }
