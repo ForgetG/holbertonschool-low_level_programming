@@ -3,24 +3,17 @@
 /**
  * helper - calculate square root
  * @n : number
- * @min: minimum possible square root
- * @max: maximum square root
+ * @sqrt: square root
  * Return: sqrt or -1
  */
 
-int	helper(int n, int min, int max)
+int	helper(int n, int sqrt)
 {
-	int	sqrt;
-
-	if (max < min)
-		return (-1);
-	sqrt = (min + max) / 2;
-	if (sqrt * sqrt == n)
+	if ((sqrt * sqrt) == n)
 		return (sqrt);
-	else if (sqrt * sqrt < n)
-		return (helper(n, sqrt + 1, max));
-	else
-		return (helper(n, min, sqrt - 1));
+	if (sqrt == n / 2)
+		return (-1);
+	return (helper(n, sqrt + 1));
 }
 
 /**
@@ -31,9 +24,11 @@ int	helper(int n, int min, int max)
 
 int	_sqrt_recursion(int n)
 {
+	int	sqrt = 0;
+
 	if (n < 0)
 		return (-1);
 	if (n == 1)
 		return (1);
-	return (helper(n, 1, n));
+	return (helper(n, sqrt));
 }
