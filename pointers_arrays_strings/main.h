@@ -34,5 +34,6 @@ void	print_array(int *a, int n);
 void	reverse_array(int *a, int n);
 void	print_chessboard(char (*a)[8]);
 void	print_diagsums(int *a, int size);
+void	set_string(char **s, char *to);
 
 #endif
