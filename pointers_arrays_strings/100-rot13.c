@@ -8,7 +8,7 @@
 
 char	*rot13(char *s)
 {
-	int	i, j;
+	int	i = 0, j = 0;
 	char	a[52] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 		, 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B'
 			, 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
@@ -19,13 +19,19 @@ char	*rot13(char *s)
 			, 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D'
 			, 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'};
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i] != '\0')
 	{
-		for (j = 0; j < 52; j++)
+		j = 0;
+		while (j < 52)
 		{
 			if (s[i] == a[j])
+			{
 				s[i] = b[j];
+				break;
+			}
+			j++;
 		}
+		i++;
 	}
 	return (s);
 }
