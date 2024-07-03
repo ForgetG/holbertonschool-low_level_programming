@@ -21,21 +21,13 @@ int	main(int argc, char **argv)
 		printf("ERROR\n");
 		return (1);
 	}
-	for (; argv[1][index] != '\0'; index++)
-	{
-		if (argv[1][index] < '0' || argv[1][index] > '9')
-		{
-			printf("ERROR\n");
-			return (0);
-		}
-	}
 	number = atoi(argv[1]);
 	if (number < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	for (index = 0; index < 5; index++)
+	for (; index < 5; index++)
 	{
 		sum += number / coins[index];
 		number %= coins[index];
