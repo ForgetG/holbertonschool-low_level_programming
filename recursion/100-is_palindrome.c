@@ -27,6 +27,9 @@ int	is_palindrome(char *s)
 {
 	int	i = 0;
 
+
+	if (s[i] == '\0')
+		return (1);
 	while (s[i] != '\0')
 		i++;
 	return (check_palindrome(s, 0, i - 1));
