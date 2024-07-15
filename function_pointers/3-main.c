@@ -18,6 +18,11 @@ int	main(int argc, char **argv)
 		exit(98);
 	}
 	operator = argv[2];
+	if (argv[2][1])
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	if (*operator != '+' && *operator != '-' && *operator != '*' &&
 	 *operator != '/' && *operator != '%')
 	{
