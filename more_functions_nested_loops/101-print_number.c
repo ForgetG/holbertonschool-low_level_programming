@@ -7,12 +7,13 @@
 
 void	print_number(int n)
 {
-	size_t number;
+	unsigned int number;
 
 	if (n == -2147483648)
 	{
 		_putchar('-');
-		number = 2147483648;
+		_putchar('2');
+		number = 147483648;
 	}
 	else if (n < 0)
 	{
@@ -22,7 +23,7 @@ void	print_number(int n)
 	}
 	else
 		number = n;
-	if (number / 10 != 0)
+	if (number / 10)
 		print_number(number / 10);
 	_putchar((number % 10) + '0');
 }
