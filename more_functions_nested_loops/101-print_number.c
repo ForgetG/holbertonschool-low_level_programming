@@ -7,8 +7,14 @@
 
 void	print_number(int n)
 {
-	unsigned int number;
-	if (n < 0)
+	size_t number;
+
+	if (n == -2147483648)
+	{
+		_putchar('-');
+		number = 2147483648;
+	}
+	else if (n < 0)
 	{
 
 		_putchar('-');
