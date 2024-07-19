@@ -12,18 +12,20 @@ void	print_number(int n)
 	if (n == -2147483648)
 	{
 		_putchar('-');
-		_putchar('2');
-		number = 147483648;
+		print_number(214748364);
+		_putchar('8');
 	}
-	else if (n < 0)
+	else 
 	{
-
-		_putchar('-');
-		number = -n;
+		if (n < 0)
+		{
+			_putchar('-');
+			number = -n;
+		}
+		else
+			number = n;
+		if (number / 10)
+			print_number(number / 10);
+		_putchar((number % 10) + '0');
 	}
-	else
-		number = n;
-	if (number / 10)
-		print_number(number / 10);
-	_putchar((number % 10) + '0');
 }
