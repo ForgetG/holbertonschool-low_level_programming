@@ -88,7 +88,6 @@ int	copy_file(const char *src_filename, const char *dest_filename)
 
 int	main(int argc, char **argv)
 {
-	umask(0002);
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
