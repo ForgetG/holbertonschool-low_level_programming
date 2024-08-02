@@ -41,6 +41,7 @@ int	main(int argc, char *argv[])
 	int	src_fd, dest_fd, n_read, n_written;
 	char	buffer[1024];
 
+	umask(0002);
 	if (argc != 3)
 		handle_error(97, "Usage: cp file_from file_to\n", NULL);
 	src_fd = open(argv[1], O_RDONLY);
