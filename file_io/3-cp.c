@@ -7,7 +7,8 @@
  * @fd1: The first file descriptor to close (if any).
  * @fd2: The second file descriptor to close (if any).
  */
-void handle_error(const char *message, int exit_code, int fd1, int fd2)
+
+void handle_error(const char *message, int exit_code, ssize_t fd1, ssize_t fd2)
 {
 	dprintf(STDERR_FILENO, "Error: %s\n", message);
 	if (fd1 != -1)
@@ -21,12 +22,13 @@ void handle_error(const char *message, int exit_code, int fd1, int fd2)
  * main - Program that copies the content of a file to another file.
  * @argc: Argument count.
  * @argv: Argument vector.
+ *
  * Return: 0.
  */
 
 int main(int argc, char **argv)
 {
-	int src_fd, dest_fd, n_read, n_written;
+	ssize_t src_fd, dest_fd, n_read, n_written;
 	char buffer[1024];
 
 	umask(0002);
@@ -52,10 +54,10 @@ int main(int argc, char **argv)
 		handle_error("Can't read from file", 98, src_fd, dest_fd);
 
 	if (close(src_fd) == -1)
-		handle_error("Can't close file descriptor", 100, -1, dest_fd);
+		handle_error("Can't close fd", 100, -1, dest_fd);
 
 	if (close(dest_fd) == -1)
-		handle_error("Can't close file descriptor", 100, -1, -1);
+		handle_error("Can't close fd", 100, -1, -1);
 
 	return (0);
 }
