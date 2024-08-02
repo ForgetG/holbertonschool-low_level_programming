@@ -51,7 +51,7 @@ int	main(int argc, char *argv[])
 			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (dest_fd == -1)
 	{
-		close_file(src_fd);
+		close(src_fd);
 		handle_error(99, "Error: Can't write to %s\n", argv[2]);
 	}
 	while ((n_read = read(src_fd, buffer, 1024)) > 0)
@@ -59,15 +59,15 @@ int	main(int argc, char *argv[])
 		n_written = write(dest_fd, buffer, n_read);
 		if (n_written == -1)
 		{
-			close_file(src_fd);
-			close_file(dest_fd);
+			close(src_fd);
+			close(dest_fd);
 			handle_error(99, "Error: Can't write from file %s\n", argv[2]);
 		}
 	}
 	if (n_read == -1)
 	{
-		close_file(src_fd);
-		close_file(dest_fd);
+		close(src_fd);
+		close(dest_fd);
 		handle_error(98, "Error: Can't read from file %s\n", argv[1]);
 	}
 	close_file(src_fd);
