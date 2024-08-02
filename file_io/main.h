@@ -6,13 +6,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/stat.h>
-#include <sys/types.h>
 
 int	_putchar(char c);
 int	create_file(const char *filename, char *text_content);
 int	append_text_to_file(const char *filename, char *text_content);
+int	copy_file(const char *src_filename, const char *dest_filename);
 
-void handle_error(const char *message, int exit_code, ssize_t fd1, ssize_t fd2);
+void	copy_file_content(int src_fd, int dest_fd,
+		const char *src_filename, const char *dest_filename);
 
 ssize_t	read_textfile(const char *filename, size_t letters);
 
