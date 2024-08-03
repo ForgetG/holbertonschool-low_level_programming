@@ -10,6 +10,9 @@
 6. Sum list
 7. Insert at index
 8. Delete at index
+9. Crackme4 (extensive use of Google and Copilot).
+10. Palindromes.
+11. Crackme5 (extensive use of Copilot to help me throught this task).
 
 ###Compilation:
 All files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5).
